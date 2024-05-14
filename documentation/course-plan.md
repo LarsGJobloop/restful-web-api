@@ -100,3 +100,4 @@
 - [RESTful API Architecture](https://www.geeksforgeeks.org/rest-api-architectural-constraints/)
 - [ASP .NET Core Web API](https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-8.0)
 - [Builder Pattern](https://medium.com/@lexitrainerph/c-builder-pattern-constructing-objects-step-by-step-97b583246599)
+- [ASP .NET Core Controller based Web API](https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-8.0)

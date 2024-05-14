@@ -9,15 +9,15 @@ internal class Program
 
     // Step 2 Configure the application
     // Configure the builder
+    webAppBuilder.Services.AddControllers(); // This allows us to use controllers
 
     // Step 3 Build
     var app = webAppBuilder.Build();
 
     // Step 4 Last mile configuration
     app.MapGet("/", () => "Hello World!");
-    app.MapGet("/todoes", () => "foo");
-    app.MapGet("/todoes/testing", () => "bar");
-    app.MapGet("/api/v1/todolist", () => "buz");
+
+    app.MapControllers(); // This mounts(maps/binds) the controllers to specifc routes
 
     // Step 5 Star the application
     app.Run();
