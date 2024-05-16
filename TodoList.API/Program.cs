@@ -10,6 +10,7 @@ internal class Program
     // Step 2 Configure the application
     // Configure the builder
     webAppBuilder.Services.AddControllers(); // This allows us to use controllers
+    webAppBuilder.Services.AddSingleton(new TodoListService());
 
     // Step 3 Build
     var app = webAppBuilder.Build();

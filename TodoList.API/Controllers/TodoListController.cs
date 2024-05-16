@@ -8,25 +8,23 @@ namespace RestfulWebApi.Controllers;
 [Route("/api/v1/[controller]")]
 public class TodoListController : ControllerBase
 {
-  [HttpGet]
-  public ActionResult<TodoModel> GetTodo()
-  {
-    TodoModel newTodo = new TodoModel()
-    {
-      Title = "Learn C#"
-    };
+  private ITodoListService todoListService;
 
-    return newTodo;
+  public TodoListController(ITodoListService TodoList)
+  {
+    todoListService = TodoList;
+  }
+
+  [HttpGet]
+  public ActionResult<TodoModel[]> GetTodo()
+  {
+    return todoListService.GetAllTodos();
   }
 
   [HttpPost]
   public ActionResult<TodoModel> CreateNewTodo(CreateTodoModel todoInput)
   {
-    TodoModel newTodo = new TodoModel()
-    {
-      Title = todoInput.Title
-    };
-
+    TodoModel newTodo = todoListService.CreateNewTodo(todoInput);
     return newTodo;
   }
 }
