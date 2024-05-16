@@ -25,6 +25,8 @@ public class TodoListService : ITodoListService
       Title = todoInput.Title
     };
 
+    todos.Add(newTodo);
+
     return newTodo;
   }
 }
