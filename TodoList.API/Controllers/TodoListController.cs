@@ -2,13 +2,31 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RestfulWebApi.Controllers;
 
+
+// http://localhost:???   /api/v1/TodoList
 [ApiController]
 [Route("/api/v1/[controller]")]
 public class TodoListController : ControllerBase
 {
   [HttpGet]
-  public ActionResult<string> GetTodo()
+  public ActionResult<TodoModel> GetTodo()
   {
-    return "Foo";
+    TodoModel newTodo = new TodoModel()
+    {
+      Title = "Learn C#"
+    };
+
+    return newTodo;
+  }
+
+  [HttpPost]
+  public ActionResult<TodoModel> CreateNewTodo(CreateTodoModel todoInput)
+  {
+    TodoModel newTodo = new TodoModel()
+    {
+      Title = todoInput.Title
+    };
+
+    return newTodo;
   }
 }

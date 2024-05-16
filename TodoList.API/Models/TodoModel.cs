@@ -6,3 +6,8 @@ public class TodoModel
   public DateTime CreatedAt { get; set; }
   public DateTime UpdatedAt { get; set; }
 }
+
+public class CreateTodoModel
+{
+  public required string Title { get; set; }
+}
