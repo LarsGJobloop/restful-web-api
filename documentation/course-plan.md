@@ -24,6 +24,10 @@
 - Implement it using an in-memory DB
 - Register it as a singleton service
 
+## Client-Server Architecture
+
+![client-Server Architecture](client-server-architecture.png)
+
 ## Week 2 <br>- *Service Oriented Architecture and Querying*
 
 ### Goals
