@@ -4,11 +4,11 @@ public interface ITodoListService
   public TodoModel CreateNewTodo(CreateTodoModel todoInput);
 }
 
-public class TodoListService : ITodoListService
+public class TodoListInMemoryService : ITodoListService
 {
   private List<TodoModel> todos;
 
-  public TodoListService()
+  public TodoListInMemoryService()
   {
     todos = new List<TodoModel>();
   }

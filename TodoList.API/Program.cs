@@ -9,8 +9,11 @@ internal class Program
 
     // Step 2 Configure the application
     // Configure the builder
+    // Uses Dependency Injection for registering services
     webAppBuilder.Services.AddControllers(); // This allows us to use controllers
-    webAppBuilder.Services.AddSingleton<ITodoListService>(new TodoListService());
+    // There is only one instance of a singleton
+    webAppBuilder.Services.AddSingleton<ITodoListService>(new TodoListInMemoryService());
+
 
     // Step 3 Build
     var app = webAppBuilder.Build();
@@ -24,5 +27,3 @@ internal class Program
     app.Run();
   }
 }
-
-
