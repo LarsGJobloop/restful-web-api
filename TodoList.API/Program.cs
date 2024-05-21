@@ -14,6 +14,11 @@ internal class Program
     // There is only one instance of a singleton
     webAppBuilder.Services.AddSingleton<ITodoListService>(new TodoListInMemoryService());
 
+    // Creates a new instance for each request
+    // webAppBuilder.Services.AddScoped<ITodoListService, TodoListInMemoryService>();
+
+    // Creates a new instance each time its invoked/called
+    // webAppBuilder.Services.AddTransient<ITodoListService, TodoListInMemoryService>();
 
     // Step 3 Build
     var app = webAppBuilder.Build();
