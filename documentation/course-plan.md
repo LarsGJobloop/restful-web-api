@@ -109,3 +109,7 @@
     - [curl](https://curl.se/)
     - [PostMan](https://www.postman.com/)
     - [VS Code Extension Thunder Client](https://www.thunderclient.com/)
+
+## Further Reading
+
+- [Bookstore API Example](https://chatgpt.com/share/d1a1c2fc-2cff-4950-a4e3-d0bea29cb35b)
