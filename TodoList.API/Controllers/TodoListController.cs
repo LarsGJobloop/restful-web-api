@@ -5,7 +5,7 @@ namespace RestfulWebApi.Controllers;
 
 // http://localhost:???   /api/v1/TodoList
 [ApiController]
-[Route("/api/v1/[controller]")]
+[Route("/api/v1/todolist")]
 public class TodoListController : ControllerBase
 {
   private ITodoListService todoListService;
