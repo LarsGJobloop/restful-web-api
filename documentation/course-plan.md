@@ -109,6 +109,8 @@
     - [curl](https://curl.se/)
     - [PostMan](https://www.postman.com/)
     - [VS Code Extension Thunder Client](https://www.thunderclient.com/)
+- [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/)
+- [LINQ Full list of methods](https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=net-8.0)
 
 ## Further Reading
 
