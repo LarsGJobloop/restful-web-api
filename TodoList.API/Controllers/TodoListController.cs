@@ -31,8 +31,15 @@ public class TodoListController : ControllerBase
   [HttpPatch("{todoId}")]
   public ActionResult<TodoModel> UpdateTodo(int todoId, [FromBody] UpdateTodoModel todoInput)
   {
-    TodoModel updatedTodo = todoListService.UpdateTodo(todoId, todoInput);
+    try
+    {
+      TodoModel updatedTodo = todoListService.UpdateTodo(todoId, todoInput);
+      return updatedTodo;
+    }
+    catch (ArgumentException exception)
+    {
+      return NotFound(exception.Message);
+    }
 
-    return updatedTodo;
   }
 }

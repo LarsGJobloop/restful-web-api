@@ -44,18 +44,17 @@ public class TodoListInMemoryService : ITodoListService
 
     // Fluent syntaxt
     // var foundTodo = todos.First((todo) => { return todo.Id == todoId; });
-    var foundTodo = todos.First(todo => todo.Id == todoId);
-
-    // there might be none todo elements
-    if (foundTodo == null)
+    try
     {
-      // Throw == return, but special
+      var foundTodo = todos.First(todo => todo.Id == todoId);
+      foundTodo.IsComplete = todoInput.IsComplete;
+      foundTodo.UpdatedAt = DateTime.Now;
+
+      return foundTodo;
+    }
+    catch (System.Exception)
+    {
       throw new ArgumentException("Todo Not found");
     }
-
-    foundTodo.IsComplete = todoInput.IsComplete;
-    foundTodo.UpdatedAt = DateTime.Now;
-
-    return foundTodo;
   }
 }
