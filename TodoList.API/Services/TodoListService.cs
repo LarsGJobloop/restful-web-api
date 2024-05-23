@@ -22,7 +22,9 @@ public class TodoListInMemoryService : ITodoListService
   {
     TodoModel newTodo = new TodoModel()
     {
-      Title = todoInput.Title
+      Title = todoInput.Title,
+      CreatedAt = DateTime.Now,
+      UpdatedAt = DateTime.Now,
     };
 
     todos.Add(newTodo);
