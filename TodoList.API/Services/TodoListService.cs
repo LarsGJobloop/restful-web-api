@@ -7,10 +7,12 @@ public interface ITodoListService
 public class TodoListInMemoryService : ITodoListService
 {
   private List<TodoModel> todos;
+  private int nextId;
 
   public TodoListInMemoryService()
   {
     todos = new List<TodoModel>();
+    nextId = 0;
   }
 
   public TodoModel[] GetAllTodos()
@@ -22,6 +24,7 @@ public class TodoListInMemoryService : ITodoListService
   {
     TodoModel newTodo = new TodoModel()
     {
+      Id = nextId++,
       Title = todoInput.Title,
       CreatedAt = DateTime.Now,
       UpdatedAt = DateTime.Now,
