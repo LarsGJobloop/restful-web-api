@@ -11,3 +11,8 @@ public class CreateTodoModel
 {
   public required string Title { get; set; }
 }
+
+public class UpdateTodoModel
+{
+  public bool IsComplete { get; set; }
+}

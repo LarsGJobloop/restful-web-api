@@ -2,6 +2,8 @@ public interface ITodoListService
 {
   public TodoModel[] GetAllTodos();
   public TodoModel CreateNewTodo(CreateTodoModel todoInput);
+
+  public TodoModel UpdateTodo(int todoId, UpdateTodoModel todoInput);
 }
 
 public class TodoListInMemoryService : ITodoListService
@@ -33,5 +35,27 @@ public class TodoListInMemoryService : ITodoListService
     todos.Add(newTodo);
 
     return newTodo;
+  }
+
+  public TodoModel UpdateTodo(int todoId, UpdateTodoModel todoInput)
+  {
+    // Naturual Language Syntaxt
+    // var foundTodo = from todo in todos where todo.Id == todoId select todo;
+
+    // Fluent syntaxt
+    // var foundTodo = todos.First((todo) => { return todo.Id == todoId; });
+    var foundTodo = todos.First(todo => todo.Id == todoId);
+
+    // there might be none todo elements
+    if (foundTodo == null)
+    {
+      // Throw == return, but special
+      throw new ArgumentException("Todo Not found");
+    }
+
+    foundTodo.IsComplete = todoInput.IsComplete;
+    foundTodo.UpdatedAt = DateTime.Now;
+
+    return foundTodo;
   }
 }

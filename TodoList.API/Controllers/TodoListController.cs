@@ -27,4 +27,12 @@ public class TodoListController : ControllerBase
     TodoModel newTodo = todoListService.CreateNewTodo(todoInput);
     return newTodo;
   }
+
+  [HttpPatch("{todoId}")]
+  public ActionResult<TodoModel> UpdateTodo(int todoId, [FromBody] UpdateTodoModel todoInput)
+  {
+    TodoModel updatedTodo = todoListService.UpdateTodo(todoId, todoInput);
+
+    return updatedTodo;
+  }
 }
